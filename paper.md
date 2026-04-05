@@ -98,7 +98,7 @@ All metrics were computed on held-out test data for each fold using the common p
 
 ### Reproducibility
 
-Full seed control was implemented to ensure reproducibility. Random seeds were fixed for NumPy, PyTorch (including CUDA and cuDNN deterministic mode), and DataLoader worker initialization. The complete analysis code, including data preprocessing, model implementations, and evaluation scripts, is available at https://github.com/iraklimatch/Benchmarking-knowledge-tracing-methods-across-five-educational-datasets.
+Full seed control was implemented to ensure reproducibility. Random seeds were fixed for NumPy, PyTorch (including CUDA and cuDNN deterministic mode), and DataLoader worker initialization. The complete analysis code, including data preprocessing, model implementations, and evaluation scripts, is available at https://github.com/iraklimatch/Benchmarking-knowledge-tracing-methods.
 
 ### Computational environment
 
