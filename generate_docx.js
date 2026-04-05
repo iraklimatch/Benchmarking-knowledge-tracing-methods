@@ -394,10 +394,6 @@ for (const ref of refsText.split("\n\n").filter(r => r.trim())) {
   }));
 }
 
-// AI disclosure
-children.push(heading("Use of generative AI", HeadingLevel.HEADING_1));
-const aiText = extractSection(paperMd, "Use of generative AI");
-if (aiText) children.push(p(aiText));
 
 // ============================================================
 // Create document

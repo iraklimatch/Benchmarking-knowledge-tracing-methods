@@ -308,7 +308,3 @@ Verger, N., Lissack, A., Gamboa, H., & Rodrigues, F. (2024). A comprehensive stu
 Xiong, X., Zhao, S., Van Inwegen, E. G., & Beck, J. E. (2016). Going deeper with deep knowledge tracing. In *Proceedings of the 9th International Conference on Educational Data Mining* (pp. 545--550).
 
 Yudelson, M. V., Koedinger, K. R., & Gordon, G. J. (2013). Individualized Bayesian knowledge tracing models. In *Proceedings of the 16th International Conference on Artificial Intelligence in Education* (pp. 171--180). Springer.
-
-## Use of generative AI
-
-This manuscript was prepared with the assistance of a large language model. The LLM was used for data processing pipeline development, benchmark code generation, statistical analysis execution, and visualization generation. All experimental design decisions, methodological choices, interpretation of results, and intellectual contributions were made by the author. The analysis code and all generated results were reviewed and validated by the author.
