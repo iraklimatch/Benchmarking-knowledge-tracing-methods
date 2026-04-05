@@ -311,4 +311,4 @@ Yudelson, M. V., Koedinger, K. R., & Gordon, G. J. (2013). Individualized Bayesi
 
 ## Use of generative AI
 
-This manuscript was prepared with the assistance of Claude (Anthropic), a large language model. Claude was used for data processing pipeline development, benchmark code generation, statistical analysis execution, and visualization generation. All experimental design decisions, methodological choices, interpretation of results, and intellectual contributions were made by the author. The analysis code and all generated results were reviewed and validated by the author.
+This manuscript was prepared with the assistance of a large language model. The LLM was used for data processing pipeline development, benchmark code generation, statistical analysis execution, and visualization generation. All experimental design decisions, methodological choices, interpretation of results, and intellectual contributions were made by the author. The analysis code and all generated results were reviewed and validated by the author.
