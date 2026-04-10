@@ -148,11 +148,19 @@ function extractSection(md, sectionName) {
 }
 
 function parseParagraphs(text) {
-  return text.split(/\n\n+/).filter(s => s.trim() && !s.startsWith("**TABLE") && !s.startsWith("*") && !s.startsWith("|"));
+  return text.split(/\n\n+/).filter(s => {
+    const t = s.trim();
+    if (!t) return false;
+    if (t.startsWith("**TABLE")) return false;   // table label handled separately
+    if (t.startsWith("|")) return false;           // markdown table rows
+    if (t.startsWith("*") && t.endsWith("*") && !t.includes(". ") && t.length < 80) return false; // short italic-only captions
+    return true;
+  });
 }
 
 function parseSubsections(sectionText) {
-  return sectionText.split(/\n### /).filter(s => s.trim());
+  // Split on ### headings; handle first subsection which may start with ###
+  return sectionText.split(/\n?### /).filter(s => s.trim());
 }
 
 // ============================================================
@@ -298,8 +306,10 @@ for (const sub of methSubs) {
         ],
         [1800, 1200, 1000, 1000, 900, 1100, 1200],
       ));
-    } else if (t.startsWith("|") || t.startsWith("*")) {
-      continue; // skip markdown tables/notes
+    } else if (t.startsWith("|")) {
+      continue; // skip markdown table rows
+    } else if (t.startsWith("*") && t.endsWith("*") && !t.includes(". ") && t.length < 80) {
+      continue; // skip short italic-only captions (table subtitles)
     } else {
       children.push(p(t));
     }
@@ -399,8 +409,10 @@ for (const sub of resSubs) {
         ],
         [1800, 1400, 1400, 1400, 1400, 1600],
       ));
-    } else if (t.startsWith("|") || t.startsWith("*Note") || t.startsWith("*")) {
+    } else if (t.startsWith("|") || t.startsWith("*Note")) {
       continue;
+    } else if (t.startsWith("*") && t.endsWith("*") && !t.includes(". ") && t.length < 80) {
+      continue; // skip short italic-only captions
     } else if (t.match(/^Fig\. \d/)) {
       const figMap = {
         "Fig. 1": ["fig1_auc_comparison.png", "Fig. 1. AUC-ROC by model and dataset.", 500, 250],
